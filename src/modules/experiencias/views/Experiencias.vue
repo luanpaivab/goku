@@ -15,6 +15,9 @@
             {{ name }}
           </li>
         </ol>
+        <v-card-text class="mt-7">
+          <p class="resumo"><strong>Resumo desta experiência: </strong> {{ item.resumo }}</p>
+        </v-card-text>
       </v-card>
       <div class="date" v-if="!item.revert">
         <p>{{ item.dataInicio }}</p>
@@ -23,7 +26,7 @@
     </div>
     <div class="content">
       <v-progress-circular
-      class="circle-top"
+        class="circle-top"
         :size="35"
         color="#333333"
         indeterminate
@@ -46,34 +49,6 @@ export default {
     experiencias() {
       return [
         {
-          company: "Guarda Municipal de Belém",
-          role: "Estagiário",
-          contract: "Estágio",
-          text: [
-            "Criação e manutenção de uma aplicação single page utilizando vue.js e um servidor de aplicação utilizando node.js.",
-            "Criação de endpoints e criação de recursos CRUD.",
-            "Criação e manutenção de queries SQL no banco MySQL.",
-            "Trabalho em conjunto com o cliente.",
-          ],
-          dataInicio: "OUTUBRO / 2020",
-          dataFinal: "ABRIL / 2021",
-          revert: false,
-        },
-        {
-          company: "Advocacia Geral da União (AGU)",
-          role: "Estagiário",
-          contract: "Estágio",
-          text: [
-            "Criação e manutenção de um sistema responsável pelo cálculo previdenciário de processos judiciais.",
-            "Design e layout do projeto desenhados no figma.",
-            "Trabalho em conjunto com estagiário responsável pelo back-end do projeto.",
-            "Estudo e implementação de metodologias ágeis.",
-          ],
-          dataInicio: "JULHO / 2021",
-          dataFinal: "DEZEMBRO / 2021",
-          revert: true,
-        },
-        {
           company: "Mercafacil",
           role: "Desenvolvedor Front-End Jr",
           contract: "Integral",
@@ -88,6 +63,40 @@ export default {
           ],
           dataInicio: "SETEMBRO / 2021",
           dataFinal: "FEVEREIRO / 2023",
+          resumo:
+            "No meu primeiro emprego como desenvolvedor, tive a oportunidade de trabalhar em uma equipe multidisciplinar, com PM, PO, designer, QA, team leader, techlead e outros desenvolvedores. Durante 1 ano e meio, fiz parte de um setor específico de desenvolvedores que cuidavam do core business da empresa, onde pude solidificar minhas habilidades em HTML, CSS e JavaScript, além de me especializar em Vue.js. Durante este período, trabalhei em vários projetos, desde pequenas melhorias até grandes features, sempre com foco na qualidade e na entrega dentro do prazo e seguindo boas práticas de desenvolvimento, como os princípios SOLID e o uso de testes. Foi meu primeiro contato com uma equipe profissional e aprendi demais com cada um desenvolvendo bastante minhas soft skills. Foi uma experiência enriquecedora e desafiadora, que me permitiu crescer tanto pessoalmente quanto profissionalmente como desenvolvedor Front-End em Vue.js.",
+          revert: false,
+        },
+        {
+          company: "Advocacia Geral da União (AGU)",
+          role: "Estagiário",
+          contract: "Estágio",
+          text: [
+            "Criação e manutenção de um sistema responsável pelo cálculo previdenciário de processos judiciais.",
+            "Design e layout do projeto desenhados no figma.",
+            "Trabalho em conjunto com estagiário responsável pelo back-end do projeto.",
+            "Estudo e implementação de metodologias ágeis.",
+          ],
+          dataInicio: "JULHO / 2021",
+          dataFinal: "DEZEMBRO / 2021",
+          resumo:
+            "No meu segundo estágio, tive a oportunidade de trabalhar exclusivamente no desenvolvimento Front-End com Vue.Js, trabalhando em um projeto grande e que exigia responsabilidade. Durante este período, pude aprimorar minhas habilidades em HTML, CSS, bootstrap e JavaScript, além de aprofundar meus conhecimentos em Vue.js, incluindo Vuex e Vue Router.  Além disso, tive a chance de trabalhar em colaboração com um desenvolvedor Back-End, o que me permitiu entender melhor as necessidades e desafios de desenvolvimento em equipe. Aprendi como é importante a comunicação clara e constante com os membros da equipe, bem como a importância de seguir boas práticas de desenvolvimento para garantir a qualidade do código.",
+          revert: true,
+        },
+        {
+          company: "Guarda Municipal de Belém",
+          role: "Estagiário",
+          contract: "Estágio",
+          text: [
+            "Criação e manutenção de uma aplicação single page utilizando vue.js e um servidor de aplicação utilizando node.js.",
+            "Criação de endpoints e criação de recursos CRUD.",
+            "Criação e manutenção de queries SQL no banco MySQL.",
+            "Trabalho em conjunto com o cliente.",
+          ],
+          dataInicio: "OUTUBRO / 2020",
+          dataFinal: "ABRIL / 2021",
+          resumo:
+            "Foi o lugar onde pude ter o primeiro contato com a área de desenvolvimento de softwares, tive a oportunidade de trabalhar tanto no Front-End quanto no Back-End, tendo a chance de estudar e aplicar meus conhecimentos em diversas tecnologias. Na parte de Front-End, tive a oportunidade de trabalhar com HTML, CSS, bootstrap e JavaScript, além de frameworks como Vue.js. Já no Back-End, tive a chance de trabalhar com Node.js, Express e MySQL, desenvolvendo soluções para APIs e bancos de dados.",
           revert: false,
         },
       ];
@@ -113,6 +122,13 @@ export default {
       letter-spacing: -1px;
       font-weight: 700;
       color: #a32470;
+    }
+    & .resumo {
+      font-size: 16px;
+      font-weight: 500;
+      color: #212020c5;
+      line-height: 25px;
+      text-align: justify;
     }
   }
 
@@ -164,7 +180,7 @@ li {
   margin-top: 26px;
   position: relative;
   font-size: 20px;
-  line-height: 20px;
+  line-height: 25px;
   font-weight: 500;
 
   &:before {
@@ -175,7 +191,7 @@ li {
     border-radius: 50%;
     border: 2px solid #ddd;
     position: absolute;
-    top: -12px;
+    top: -8px;
     left: -34px;
   }
 }
